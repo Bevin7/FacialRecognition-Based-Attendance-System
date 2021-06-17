@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet"> 
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/css/style.adminHome.css" />
+    <title>DASHBOARD</title>
+    
+  </head>
+  <body id="body">
+
+    <div class="container">
+      
+        
+      <nav class="navbar">
+        <div class="nav_icon" >
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div class="navbar__left">
+          <a href="#" style="color: rgb(0, 68, 255);">Logged in</a>
+          <a href="#">Student</a>
+          <a class="active_link" style="color: red;" href="#">Admin</a>
+        </div>
+        <div class="navbar__right">
+          <a href="#">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <img width="30" src="../static/images/avatar.svg" alt="" />
+            <!-- <i class="fa fa-user-circle-o" aria-hidden="true"></i> -->
+          </a>
+        </div>
+      </nav>
+
+      <main>
+        <div class="main__container">
+          <!-- MAIN TITLE STARTS HERE -->
+
+          <div class="main__title"><a class="logoutbutton " href="/Logout"> LOG OUT</a>
+            <img src="../static/images/hello.svg" alt="" />
+            <div class="main__greeting">
+              <h1>Hello {{User}}</h1>
+              <p>Welcome to your admin dashboard</p>
+            </div>
+          </div>
+
+          <!-- MAIN TITLE ENDS HERE -->
+
+          <!-- MAIN CARDS STARTS HERE -->
+          <div class="main__cards">
+            <div class="card">
+              <i
+                class="fa fa-user-o fa-2x text-lightblue"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Students</p>
+                <span class="font-bold text-title">{{StudNo}}</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Day of Watching</p>
+                <span class="font-bold text-title">{{Date}}</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i
+                class="fa fa-video-camera fa-2x text-yellow"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Number of Hours</p>
+                <span class="font-bold text-title">{{Wday}}</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i
+                class="fa fa-thumbs-up fa-2x text-green"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Todays Attendance</p>
+                <span class="font-bold text-title">{{Tattend}}/{{StudNo}}</span>
+              </div>
+              
+            </div>
+          </div>
+          <!-- MAIN CARDS ENDS HERE -->
+
+          <!-- CHARTS STARTS HERE -->
+          <div class="charts">
+            <div class="charts__left">
+              <div class="charts__left__title">
+                <div>
+                  <h1>Daily Reports</h1>
+                  <p>Of previous Working days</p>
+                </div>
+                <i class="fa fa-usd" aria-hidden="true"></i>
+              </div>
+              <div id="apex1"></div>
+            </div>
+
+            <div class="charts__right">
+              <div class="charts__right__title">
+                <div>
+                  <h1>Management</h1>
+                  <p>Funtionalities Available</p>
+                </div>
+                <i class="fa fa-usd" aria-hidden="true"></i>
+              </div>
+
+              <div class="charts__right__cards"><a class="a" style="text-decoration: none; ;" href="register">
+                <div class="card1">
+                  <h1 style="font-size: 20px;font-family: 'Days One', sans-serif;" >ADD</h1>
+                  <p style="font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Students</p>
+                </div></a>
+
+                <a class="a" style="text-decoration: none; ;" href="predict">
+                <div class="card2">
+                  <h1 style="font-size: 20px;font-family: 'Days One', sans-serif;">TAKE</h1>
+                  <p style="font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Attendance</p>
+                </div></a>
+
+                <a class="a" style="text-decoration: none; ;" href="phase2">
+                <div class="card3">
+                  <h1 style="font-size: 20px;font-family: 'Days One', sans-serif;">VIEW</h1>
+                  <p style="font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Attendance</p>
+                </div>
+                
+
+                <a class="a" style="text-decoration: none; ;" href="phase2">
+                <div class="card4">
+                  <h1 style="font-size: 20px;font-family: 'Days One', sans-serif;">ENROLL</h1>
+                  <p style="font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Students</p>
+                </div></a>
+              </div>
+            </div>
+          </div>
+          <!-- CHARTS ENDS HERE -->
+        </div>
+      </main>
+
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../static/js/adminhome.js"></script>
+    
+  </body>
+  
+</html>
