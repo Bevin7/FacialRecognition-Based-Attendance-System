@@ -55,8 +55,8 @@ def identify():
 
     attend = [0 for i in range(60)]	
 
-    currentDir = os.path.dirname(os.path.abspath(__file__))
-    directory = os.path.join(currentDir, 'mlFiles/CroppedFaces')
+    
+    directory = 'mlFiles/CroppedFaces'
     for filename in os.listdir(directory):
         if filename.endswith(".jpg"):
             imgurl = urllib.request.pathname2url(os.path.join(directory, filename))
