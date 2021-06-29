@@ -60,7 +60,7 @@ def identify():
     for filename in os.listdir(directory):
         if filename.endswith(".jpg"):
             imgurl = urllib.request.pathname2url(os.path.join(directory, filename))
-            imgurl = imgurl[3:]
+            
             res = CF.face.detect(imgurl)
             if len(res) != 1:
                 print("No face detected.")
