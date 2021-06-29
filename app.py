@@ -70,8 +70,7 @@ def identify():
             for face in res:
                 faceIds.append(face['faceId'])
             res = CF.face.identify(faceIds, personGroupId)
-            print(filename)
-            print(res)
+            
             for face  in res:
                 if not face['candidates']:
                     print("Unknown")
@@ -83,7 +82,7 @@ def identify():
                     attend[int(row[0])] += 1
                     print(int(row[0]))
                     print(row[1] + " recognized")
-            time.sleep(6)
+            
     count=0
     for row in range(2, sheet.max_row+1):
         rn = sheet.cell(row,1).value
